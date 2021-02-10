@@ -16,15 +16,16 @@ block content
           use(xlink:href="../../img/svg/sprite/sprite.svg#logout")
     include ../sections/_sidebar.pug
     main.app-content.left.right
-      .app-page
-        .app-page__top
-          h3.app-page__title Планирование
-          .app-page__current-balance 99 700,00 ₽
-        .row
-          .col-12
-            +progressBar('JavaScript', '5 000, 00 ₽ из 25 000, 00 ₽', 'Покупка курсов', 20).color5
-            +progressBar('Vue.js', '16 000, 00 ₽ из 25 000, 00 ₽', 'Покупка курсов', 64).color1
-            +progressBar('Node.js', '30 000, 00 ₽ из 25 000, 00 ₽', 'Покупка курсов', 100).color2
+      .container
+        .app-page
+          .app-page__top
+            h3.app-page__title Планирование
+            .app-page__current-balance 99 700,00 ₽
+          .row
+            .col-12
+              +progressBar('JavaScript', '5 000, 00 ₽ из 25 000, 00 ₽', 'Покупка курсов', 20).color5
+              +progressBar('Vue.js', '16 000, 00 ₽ из 25 000, 00 ₽', 'Покупка курсов', 64).color1
+              +progressBar('Node.js', '30 000, 00 ₽ из 25 000, 00 ₽', 'Покупка курсов', 100).color2
   +buttonAdd()(data-poisition="top", data-tooltip="Добавить запись")
 block scripts
   script(src="../../js/index.js")

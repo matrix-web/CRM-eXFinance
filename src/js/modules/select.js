@@ -28,7 +28,7 @@ const getTemplate = (data = [], placeholder, selectedId, itemClass, listClass, t
     <div class="select__backdrop" data-type="backdrop"></div>
       <div class="select__input" data-type="input" aria-label="select-input">
         <span data-type="value">${text}</span>
-        <svg class="select__icon" data-type="arrow">
+        <svg class="select__icon" data-type="arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
           <use xlink:href="../../img/svg/sprite/sprite.svg#arrow-down"></use>
         </svg>
       </div>
