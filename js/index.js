@@ -227,7 +227,7 @@ var selectLanguage = new _modules_select__WEBPACK_IMPORTED_MODULE_0__["Select"](
     value: 'Английский'
   }],
   itemClass: 'select__item--position',
-  template: "<svg class=\"select__icon\"><use xlink:href=\"../../img/svg/sprite/sprite.svg#russia\"></use></svg>, <svg class=\"select__icon\"><use xlink:href=\"../../img/svg/sprite/sprite.svg#usa\"></use></svg>",
+  template: "<svg class=\"select__icon\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><use xlink:href=\"../../img/svg/sprite/sprite.svg#russia\"></use></svg>, <svg class=\"select__icon\"><use xlink:href=\"../../img/svg/sprite/sprite.svg#usa\"></use></svg>",
   onSelect: function onSelect(item) {
     console.log('selected item', item);
   }
