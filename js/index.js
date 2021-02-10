@@ -354,7 +354,7 @@ var getTemplate = function getTemplate() {
       return "<li class=\"select__item ".concat(itemClass, " ").concat(cls, "\" aria-label=\"select-item\" data-type=\"item\" data-id=\"").concat(item.id, "\">").concat(item.value, "</li>");
     }
   });
-  return "\n    <div class=\"select__backdrop\" data-type=\"backdrop\"></div>\n      <div class=\"select__input\" data-type=\"input\" aria-label=\"select-input\">\n        <span data-type=\"value\">".concat(text, "</span>\n        <svg class=\"select__icon\" data-type=\"arrow\">\n          <use xlink:href=\"../../img/svg/sprite/sprite.svg#arrow-down\"></use>\n        </svg>\n      </div>\n      <div id=\"select\" class=\"select__dropdown\" aria-label=\"dropdown\">\n        <ul class=\"select__list ").concat(listClass, "\">\n          ").concat(items.join(''), "\n        </ul>\n      </div>\n  ");
+  return "\n    <div class=\"select__backdrop\" data-type=\"backdrop\"></div>\n      <div class=\"select__input\" data-type=\"input\" aria-label=\"select-input\">\n        <span data-type=\"value\">".concat(text, "</span>\n        <svg class=\"select__icon\" data-type=\"arrow\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n          <use xlink:href=\"../../img/svg/sprite/sprite.svg#arrow-down\"></use>\n        </svg>\n      </div>\n      <div id=\"select\" class=\"select__dropdown\" aria-label=\"dropdown\">\n        <ul class=\"select__list ").concat(listClass, "\">\n          ").concat(items.join(''), "\n        </ul>\n      </div>\n  ");
 };
 
 var Select = /*#__PURE__*/function () {

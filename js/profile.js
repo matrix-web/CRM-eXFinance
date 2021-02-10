@@ -198,7 +198,9 @@ function displayClock() {
   return;
 }
 
-window.setInterval(displayClock, 1000);
+window.addEventListener('load', function () {
+  window.setInterval(displayClock, 1000);
+});
 
 /***/ }),
 
