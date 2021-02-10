@@ -565,7 +565,7 @@ img {
   border-radius: 3px;
   background-color: #fff;
   border: 1px solid #e5eaf4;
-  background-image: url("../../img/svg/check.svg");
+  background-image: url("../img/svg/check.svg");
   background-repeat: no-repeat;
   background-position: center -10px;
   transition: background .3s ease-in 0s;
