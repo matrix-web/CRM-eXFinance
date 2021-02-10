@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <title>exFinance CRM system - Счет</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+  <div class="app-main-layout app-main">
+    <nav class="navigation app-navigation">
+      <div class="navigation__select">
+        <div class="select" id="language"></div>
+      </div>
+      <button class="button-logout" data-logout data-position="left" data-tooltip="Выход">
+        <svg class="button-logout__icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <use xlink:href="./img/svg/sprite/sprite.svg#logout"></use>
+        </svg>
+      </button>
+    </nav>
+    <aside class="sidebar" data-sidebar>
+      <div class="sidebar-content">
+        <div class="sidebar__logo" data-logo>
+          <a class="sidebar__logo-link" href="index.html" data-logo-link>eXFinance</a>
+          <button class="sidebar__close" data-close="true">&times;</button>
+        </div>
+        <div class="user" data-user>
+          <a class="user__img" href="profile.html" data-user-img>
+            <img src="./img/avatars/user-avatar.jpg" alt="avatar">
+          </a>
+          <div class="user__info" data-user-info>
+            <h4 class="user__title">Sierra Ferguson</h4>
+            <p class="user__email">s.ferguson@gmail.com</p>
+          </div>
+        </div>
+        <nav class="sidebar__nav" data-sidebar-nav>
+          <a class="sidebar__nav-link" href="index.html">
+            <svg class="sidebar__nav-link-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" data-sidebar-icon>
+              <use xlink:href="./img/svg/sprite/sprite.svg#money"></use>
+            </svg>
+            <span data-nav-text>Счет</span>
+          </a>
+          <a class="sidebar__nav-link" href="history.html">
+            <svg class="sidebar__nav-link-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" data-sidebar-icon>
+              <use xlink:href="./img/svg/sprite/sprite.svg#file"></use>
+            </svg>
+            <span data-nav-text>История</span>
+          </a>
+          <a class="sidebar__nav-link" href="planning.html">
+            <svg class="sidebar__nav-link-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" data-sidebar-icon>
+              <use xlink:href="./img/svg/sprite/sprite.svg#to-do-list"></use>
+            </svg>
+            <span data-nav-text>Планирование</span>
+          </a>
+          <a class="sidebar__nav-link" href="record.html">
+            <svg class="sidebar__nav-link-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" data-sidebar-icon>
+              <use xlink:href="./img/svg/sprite/sprite.svg#edit"></use>
+            </svg>
+            <span data-nav-text>Новая запись</span>
+          </a>
+          <a class="sidebar__nav-link" href="categories.html">
+            <svg class="sidebar__nav-link-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" data-sidebar-icon>
+              <use xlink:href="./img/svg/sprite/sprite.svg#categories"></use>
+            </svg>
+            <span data-nav-text>Категории</span>
+          </a>
+        </nav>
+      </div>
+      <button class="sidebar__toggle-button" data-sidebar-toggle="toggle">
+        <svg class="sidebar__toggle-button-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" data-toggle-icon>
+          <use xlink:href="./img/svg/sprite/sprite.svg#toggle"></use>
+        </svg>
+        <span data-toggle-text>Переключить панель</span>
+      </button>
+    </aside>
+    <main class="app-content right left">
+      <div class="container">
+        <div class="app-page">
+          <div class="app-page__top">
+            <h3 class="app-page__title">Счет</h3>
+            <button class="button button--primary app-page__button" data-refresh data-poisition="top" data-tooltip="Перезагрузить">
+              <svg class="app-page__button-refresh" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <use xlink:href="./img/svg/sprite/sprite.svg#refresh"></use>
+              </svg>
+            </button>
+          </div>
+          <div class="row">
+            <div class="col-12 col-md-5 app-page__col-content">
+              <div class="card">
+                <div class="card__top">
+                  <h3 class="card__title">Текущий баланс</h3>
+                </div>
+                <div class="card__content">
+                  <div class="items">
+                    <p class="items__item">99 700,00 ₽</p>
+                    <p class="items__item">1 358,00 $</p>
+                    <p class="items__item">1 122,00 €</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-7">
+              <div class="card">
+                <div class="card__top">
+                  <h3 class="card__title">Курс валют</h3>
+                </div>
+                <div class="card__content">
+                  <table class="table">
+                    <thead class="table-head">
+                      <tr class="table__row">
+                        <th>Валюта</th>
+                        <th>Курс</th>
+                        <th>Дата</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="table__row">
+                        <td class="table__cell table__cell-currency" data-label="Валюта">RUB</td>
+                        <td class="table__cell" data-label="Курс">88.97009</td>
+                        <td class="table__cell" data-label="Дата">20 января 2021 г.</td>
+                      </tr>
+                      <tr class="table__row">
+                        <td class="table__cell table__cell-currency" data-label="Валюта">USD</td>
+                        <td class="table__cell" data-label="Курс">1.21041</td>
+                        <td class="table__cell" data-label="Дата">20 января 2021 г.</td>
+                      </tr>
+                      <tr class="table__row">
+                        <td class="table__cell table__cell-currency" data-label="Валюта">EUR</td>
+                        <td class="table__cell" data-label="Курс">1.00000</td>
+                        <td class="table__cell" data-label="Дата">20 января 2021 г.</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="button-add" href="record.html" data-poisition="top" data-tooltip="Добавить запись">
+        <svg class="button-add__icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <use xlink:href="./img/svg/sprite/sprite.svg#add"></use>
+        </svg>
+      </a>
+    </main>
+  </div>
+  <script src="./js/index.js"></script>
+</body>
+
+</html>

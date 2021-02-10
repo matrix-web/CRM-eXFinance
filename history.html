@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <title>exFinance CRM system - История записей</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+  <div class="app-main-layout app-main-history">
+    <nav class="navigation app-navigation">
+      <div class="navigation__select">
+        <div class="select" id="language"></div>
+      </div>
+      <button class="button-logout" data-logout data-position="left" data-tooltip="Выход">
+        <svg class="button-logout__icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <use xlink:href="./img/svg/sprite/sprite.svg#logout"></use>
+        </svg>
+      </button>
+    </nav>
+    <aside class="sidebar" data-sidebar>
+      <div class="sidebar-content">
+        <div class="sidebar__logo" data-logo>
+          <a class="sidebar__logo-link" href="index.html" data-logo-link>eXFinance</a>
+          <button class="sidebar__close" data-close="true">&times;</button>
+        </div>
+        <div class="user" data-user>
+          <a class="user__img" href="profile.html" data-user-img>
+            <img src="./img/avatars/user-avatar.jpg" alt="avatar">
+          </a>
+          <div class="user__info" data-user-info>
+            <h4 class="user__title">Sierra Ferguson</h4>
+            <p class="user__email">s.ferguson@gmail.com</p>
+          </div>
+        </div>
+        <nav class="sidebar__nav" data-sidebar-nav>
+          <a class="sidebar__nav-link" href="index.html">
+            <svg class="sidebar__nav-link-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" data-sidebar-icon>
+              <use xlink:href="./img/svg/sprite/sprite.svg#money"></use>
+            </svg>
+            <span data-nav-text>Счет</span>
+          </a>
+          <a class="sidebar__nav-link" href="history.html">
+            <svg class="sidebar__nav-link-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" data-sidebar-icon>
+              <use xlink:href="./img/svg/sprite/sprite.svg#file"></use>
+            </svg>
+            <span data-nav-text>История</span>
+          </a>
+          <a class="sidebar__nav-link" href="planning.html">
+            <svg class="sidebar__nav-link-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" data-sidebar-icon>
+              <use xlink:href="./img/svg/sprite/sprite.svg#to-do-list"></use>
+            </svg>
+            <span data-nav-text>Планирование</span>
+          </a>
+          <a class="sidebar__nav-link" href="record.html">
+            <svg class="sidebar__nav-link-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" data-sidebar-icon>
+              <use xlink:href="./img/svg/sprite/sprite.svg#edit"></use>
+            </svg>
+            <span data-nav-text>Новая запись</span>
+          </a>
+          <a class="sidebar__nav-link" href="categories.html">
+            <svg class="sidebar__nav-link-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" data-sidebar-icon>
+              <use xlink:href="./img/svg/sprite/sprite.svg#categories"></use>
+            </svg>
+            <span data-nav-text>Категории</span>
+          </a>
+        </nav>
+      </div>
+      <button class="sidebar__toggle-button" data-sidebar-toggle="toggle">
+        <svg class="sidebar__toggle-button-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" data-toggle-icon>
+          <use xlink:href="./img/svg/sprite/sprite.svg#toggle"></use>
+        </svg>
+        <span data-toggle-text>Переключить панель</span>
+      </button>
+    </aside>
+    <main class="app-content left right">
+      <div class="container">
+        <div class="app-page">
+          <div class="app-page__top">
+            <h3 class="app-page__title">История записей</h3>
+          </div>
+          <div class="row">
+            <div class="col-12"></div>
+            <section class="history">
+              <div class="history__chart">
+                <!-- here will be the graph chart.js -->
+                <canvas></canvas>
+              </div>
+              <table class="history-table">
+                <thead class="history-table__head">
+                  <tr class="history-table__row" style="display: none;">
+                    <td class="history-table__cell history-table__cell--info" colspan="6">
+                      <div class="history-table__checkbox inline-block">
+                        <label class="checkbox-label">
+                          <input class="checkbox" type="checkbox" />
+                          <span class="fake-checkbox"></span>
+                        </label>
+                      </div>
+                      <span>1 Выбрано</span>
+                      <button class="history-table__button-delete">
+                        <svg class="history-table__button-delete-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                          <use xlink:href="./img/svg/sprite/sprite.svg#trash"></use>
+                        </svg>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr class="history-table__row-head">
+                    <th class="history-table__cell-title">
+                      <label class="checkbox-label">
+                        <input class="checkbox" type="checkbox" />
+                        <span class="fake-checkbox"></span>
+                      </label>
+                    </th>
+                    <th class="history-table__cell-title">#</th>
+                    <th class="history-table__cell-title">Сумма</th>
+                    <th class="history-table__cell-title">Дата</th>
+                    <th class="history-table__cell-title">Категория</th>
+                    <th class="history-table__cell-title">Тип</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="history-table__row">
+                    <td class="history-table__cell">
+                      <label class="checkbox-label">
+                        <input class="checkbox" type="checkbox" />
+                        <span class="fake-checkbox"></span>
+                      </label>
+                    </td>
+                    <td class="history-table__cell" data-label="#">1</td>
+                    <td class="history-table__cell" data-label="Сумма">1 500,00 ₽</td>
+                    <td class="history-table__cell" data-label="Дата">06 января 2021 г., 19:50:06</td>
+                    <td class="history-table__cell" data-label="Категория">Автомобиль</td>
+                    <td class="history-table__cell" data-label="Тип">
+                      <svg class="history-table__icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <use xlink:href="./img/svg/sprite/sprite.svg#income"></use>
+                      </svg>
+                    </td>
+                  </tr>
+                  <tr class="history-table__row">
+                    <td class="history-table__cell">
+                      <label class="checkbox-label">
+                        <input class="checkbox" type="checkbox" />
+                        <span class="fake-checkbox"></span>
+                      </label>
+                    </td>
+                    <td class="history-table__cell" data-label="#">2</td>
+                    <td class="history-table__cell" data-label="Сумма">15 000,00 ₽</td>
+                    <td class="history-table__cell" data-label="Дата">07 января 2021 г., 13:16:38</td>
+                    <td class="history-table__cell" data-label="Категория">WFM</td>
+                    <td class="history-table__cell" data-label="Тип">
+                      <svg class="history-table__icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <use xlink:href="./img/svg/sprite/sprite.svg#outcome"></use>
+                      </svg>
+                    </td>
+                  </tr>
+                  <tr class="history-table__row">
+                    <td class="history-table__cell">
+                      <label class="checkbox-label">
+                        <input class="checkbox" type="checkbox" />
+                        <span class="fake-checkbox"></span>
+                      </label>
+                    </td>
+                    <td class="history-table__cell" data-label="#">3</td>
+                    <td class="history-table__cell" data-label="Сумма">10 000,00 ₽</td>
+                    <td class="history-table__cell" data-label="Дата">07 января 2021 г., 14:39:00</td>
+                    <td class="history-table__cell" data-label="Категория">Девушка</td>
+                    <td class="history-table__cell" data-label="Тип">
+                      <svg class="history-table__icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <use xlink:href="./img/svg/sprite/sprite.svg#outcome"></use>
+                      </svg>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <nav aria-label="pagination">
+                <ul class="pagination">
+                  <li class="pagination__item disabled">
+                    <a class="pagination__link" href="#" aria-disabled="true">Назад</a>
+                  </li>
+                  <li class="pagination__item">
+                    <a class="pagination__link" href="#">1</a>
+                  </li>
+                  <li class="pagination__item pagination__item--active" aria-current="page">
+                    <a class="pagination__link" href="#">2</a>
+                  </li>
+                  <li class="pagination__item">
+                    <a class="pagination__link" href="#">3</a>
+                  </li>
+                  <li class="pagination__item">
+                    <a class="pagination__link" href="#">Вперед</a>
+                  </li>
+                </ul>
+              </nav>
+            </section>
+          </div>
+        </div>
+      </div>
+      <a class="button-add" href="record.html" data-poisition="top" data-tooltip="Добавить запись">
+        <svg class="button-add__icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <use xlink:href="./img/svg/sprite/sprite.svg#add"></use>
+        </svg>
+      </a>
+    </main>
+  </div>
+  <script src="./js/index.js"></script>
+</body>
+
+</html>

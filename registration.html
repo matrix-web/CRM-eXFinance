@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <title>exFinance CRM system - Счет</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+  <nav class="navigation">
+    <div class="container">
+      <span class="navigation__logo">eXFinance</span>
+    </div>
+  </nav>
+  <div class="auth register">
+    <div class="container">
+      <div class="auth-content">
+        <div class="auth__img">
+          <img src="./img/background/work.png" alt="user registration">
+        </div>
+        <form class="auth__form">
+          <h2 class="auth__title register--position-lines">Регистрация</h2>
+          <div class="input-field">
+            <label class="label">
+              <span class="label__text">Ваше имя*</span>
+              <input class="input" type="text" placeholder="Введите имя" />
+            </label>
+            <span class="helper-text">Это поле является обязательным</span>
+          </div>
+          <div class="input-field">
+            <label class="label">
+              <span class="label__text">Email address*</span>
+              <input class="input" type="email" placeholder="Введите email-адрес" />
+            </label>
+            <span class="helper-text">Это поле является обязательным</span>
+          </div>
+          <div class="input-field">
+            <label class="label">
+              <span class="label__text">Пароль*</span>
+              <input class="input" type="password" placeholder="Введите пароль" />
+            </label>
+            <span class="helper-text">Это поле является обязательным</span>
+          </div>
+          <div class="input-field auth__input-field">
+            <label class="checkbox-label">
+              <input class="checkbox" type="checkbox" />
+              <span class="fake-checkbox"></span>Политика конфиденциальности
+            </label>
+          </div>
+          <div class="input-field">
+            <input class="button button--primary auth__button" type="submit" value="Зарегистрироваться">
+          </div>
+          <div class="auth__message">
+            <span>Уже есть аккаунт? </span>
+            <a href="login.html">Выполнить вход</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

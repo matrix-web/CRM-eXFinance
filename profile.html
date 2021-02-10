@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <title>exFinance CRM system - Профиль</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+  <div class="app-main-layout app-main-profile">
+    <nav class="navigation app-navigation">
+      <div class="navigation__select">
+        <div class="select" id="language"></div>
+      </div>
+      <button class="button-logout" data-logout data-position="left" data-tooltip="Выход">
+        <svg class="button-logout__icon">
+          <use xlink:href="./img/svg/sprite/sprite.svg#logout"></use>
+        </svg>
+      </button>
+    </nav>
+    <aside class="sidebar" data-sidebar>
+      <div class="sidebar-content">
+        <div class="sidebar__logo" data-logo>
+          <a class="sidebar__logo-link" href="profile.html" data-logo-link>eXFinance</a>
+          <button class="sidebar__close" data-close="true">&times;</button>
+        </div>
+        <div class="user" data-user>
+          <a class="user__img" href="#" data-user-img>
+            <img src="./img/avatars/user-avatar.jpg" alt="avatar">
+          </a>
+          <div class="user__info" data-user-info>
+            <h4 class="user__title">Sierra Ferguson</h4>
+            <p class="user__email">s.ferguson@gmail.com</p>
+          </div>
+        </div>
+        <nav class="sidebar__nav" data-sidebar-nav>
+          <a class="sidebar__nav-link" href="index.html">
+            <svg class="sidebar__nav-link-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" data-sidebar-icon>
+              <use xlink:href="./img/svg/sprite/sprite.svg#money"></use>
+            </svg>
+            <span data-nav-text>Счет</span>
+          </a>
+          <a class="sidebar__nav-link" href="history.html">
+            <svg class="sidebar__nav-link-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" data-sidebar-icon>
+              <use xlink:href="./img/svg/sprite/sprite.svg#file"></use>
+            </svg>
+            <span data-nav-text>История</span>
+          </a>
+          <a class="sidebar__nav-link" href="planning.html">
+            <svg class="sidebar__nav-link-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" data-sidebar-icon>
+              <use xlink:href="./img/svg/sprite/sprite.svg#to-do-list"></use>
+            </svg>
+            <span data-nav-text>Планирование</span>
+          </a>
+          <a class="sidebar__nav-link" href="record.html">
+            <svg class="sidebar__nav-link-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" data-sidebar-icon>
+              <use xlink:href="./img/svg/sprite/sprite.svg#edit"></use>
+            </svg>
+            <span data-nav-text>Новая запись</span>
+          </a>
+          <a class="sidebar__nav-link" href="categories.html">
+            <svg class="sidebar__nav-link-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" data-sidebar-icon>
+              <use xlink:href="./img/svg/sprite/sprite.svg#categories"></use>
+            </svg>
+            <span data-nav-text>Категории</span>
+          </a>
+        </nav>
+      </div>
+      <button class="sidebar__toggle-button" data-sidebar-toggle="toggle">
+        <svg class="sidebar__toggle-button-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" data-toggle-icon>
+          <use xlink:href="./img/svg/sprite/sprite.svg#toggle"></use>
+        </svg>
+        <span data-toggle-text>Переключить панель</span>
+      </button>
+    </aside>
+    <main class="app-content left right">
+      <div class="container">
+        <div class="app-page">
+          <div class="app-page__top">
+            <h3 class="app-page__title">Профиль</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 col-sm-12 col-xl-6">
+            <div class="card-wrapper">
+              <div class="card card-profile">
+                <div class="card__content card__user-content">
+                  <div class="card-img-wrapper">
+                    <div class="card__user-img">
+                      <img src="./img/avatars/middle-avatar.jpg" alt="user avatar">
+                      <div class="card-profile__img-overlay">
+                        <form class="card__profile-form" enctype="multipart/form-data">
+                          <input class="card-profile__file" type="file" id="file">
+                          <label class="card-profile__file-label" for="file">
+                            <svg class="card-profile__icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                              <use xlink:href="./img/svg/sprite/sprite.svg#image"></use>
+                            </svg>
+                          </label>
+                        </form>
+                      </div>
+                    </div>
+                    <button class="card__user-img-edit">
+                      <svg class="card__user-img-edit-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <use xlink:href="./img/svg/sprite/sprite.svg#edit-data"></use>
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="card__user-info">
+                    <h4 class="card__user-title">Sierra Ferguson</h4>
+                    <input class="card__user-title-input hide" type="text" value="Sierra Ferguson" disabled>
+                    <p class="card__user-email">s.ferguson@gmail.com</p>
+                    <input class="card__user-email-input hide" type="email" value="s.ferguson@gmail.com" disabled>
+                    <p class="card__user-balance">Баланс 99 700,00 ₽</p>
+                  </div>
+                </div>
+                <button class="card-profile__button-edit">
+                  <svg class="card-profile__button-edit__icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <use xlink:href="./img/svg/sprite/sprite.svg#edit-data"></use>
+                  </svg>
+                </button>
+              </div>
+              <div class="card card-password">
+                <h3 class="card__password-title">Смена пароля</h3>
+                <form class="card-password__change">
+                  <div class="input-field">
+                    <label class="label">
+                      <span class="label__text">Пароль</span>
+                      <input class="input" type="password" placeholder="Введите пароль" />
+                    </label>
+                    <span class="helper-text">Это поле является обязательным</span>
+                  </div>
+                  <div class="input-field">
+                    <label class="label">
+                      <span class="label__text">Повторите пароль</span>
+                      <input class="input" type="password" placeholder="Повторите пароль" />
+                    </label>
+                    <span class="helper-text">Это поле является обязательным</span>
+                  </div>
+                  <div class="input-field">
+                    <input class="button button--primary" type="submit" value="Сохранить">
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-xl-6">
+            <div class="card-clock">
+              <canvas class="clock-canvas" id="canvas"></canvas>
+              <p class="card-clock__date"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <a class="button-add" href="record.html" data-poisition="top" data-tooltip="Добавить запись">
+      <svg class="button-add__icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <use xlink:href="./img/svg/sprite/sprite.svg#add"></use>
+      </svg>
+    </a>
+  </div>
+  <script src="./js/index.js"></script>
+  <script src="./js/profile.js"></script>
+</body>
+
+</html>
