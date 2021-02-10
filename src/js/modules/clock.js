@@ -112,4 +112,6 @@ function displayClock () {
   return
 }
 
-window.setInterval(displayClock, 1000)
+window.addEventListener('load', () => {
+  window.setInterval(displayClock, 1000)
+})
