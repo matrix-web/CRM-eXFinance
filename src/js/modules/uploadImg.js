@@ -15,59 +15,63 @@ export default class Upload {
 
     this.preview = this.createElement('div', ['preview'])
 
-    if (this.options.modeView === 'default') {
-      this.buttonOpen = this.createElement('button', ['button', 'button--primary'], 'Открыть')
-      this.buttonUpload = this.createElement('button', ['button', 'button--upload'], 'Загрузить')
-      this.buttonUpload.style.display = 'none'
+    if (this.input) {
 
-      this.input.insertAdjacentElement('afterend', this.preview)
-      this.input.insertAdjacentElement('afterend', this.buttonUpload)
-      this.input.insertAdjacentElement('afterend', this.buttonOpen)
-
-      this.buttonOpen.addEventListener('click', this.triggerInput.bind(this))
-      this.buttonUpload.addEventListener('click', this.uploadHandler.bind(this))
-    } else if (this.options.modeView === 'custom') {
-    
-      if (this.options.hasOwnProperty('previewPos') && this.options.previewPos.hasOwnProperty('selectorPos')) {
-        this.positionElement(this.preview, this.options.previewPos.selectorPos, this.options.previewPos.pos)
-      } else {
-        this.input.insertAdjacentElement('afterend', this.preview)
-      }
-
-      if (this.options.hasOwnProperty('buttonOpen')) {
-        if (this.options.buttonOpen.el instanceof HTMLElement) {
-          this.buttonOpen = this.options.buttonOpen.el
-
-          this.buttonOpen.addEventListener('click', this.triggerInput.bind(this))
-        }
-      }
-
-      if (this.options.hasOwnProperty('buttonDownLoad') && this.options.buttonDownLoad.hasOwnProperty('el')) {
-        if (this.options.buttonDownLoad.el instanceof HTMLElement) {
-            this.buttonUpload = this.options.buttonDownLoad.el
-            this.buttonUpload.style.display = 'none'
-        }
-      } else {
-        this.buttonUpload = this.createElement('button', ['button', 'button--primary'], 'Загрузить')
+      if (this.options.modeView === 'default') {
+        this.buttonOpen = this.createElement('button', ['button', 'button--primary'], 'Открыть')
+        this.buttonUpload = this.createElement('button', ['button', 'button--upload'], 'Загрузить')
         this.buttonUpload.style.display = 'none'
-        document.querySelector(this.options.buttonDownLoad.selectorPos).insertAdjacentElement(this.options.buttonDownLoad.pos, this.buttonUpload)
+
+        this.input.insertAdjacentElement('afterend', this.preview)
+        this.input.insertAdjacentElement('afterend', this.buttonUpload)
+        this.input.insertAdjacentElement('afterend', this.buttonOpen)
+
+        this.buttonOpen.addEventListener('click', this.triggerInput.bind(this))
+        this.buttonUpload.addEventListener('click', this.uploadHandler.bind(this))
+      } else if (this.options.modeView === 'custom') {
+      
+        if (this.options.hasOwnProperty('previewPos') && this.options.previewPos.hasOwnProperty('selectorPos')) {
+          this.positionElement(this.preview, this.options.previewPos.selectorPos, this.options.previewPos.pos)
+        } else {
+          this.input.insertAdjacentElement('afterend', this.preview)
+        }
+
+        if (this.options.hasOwnProperty('buttonOpen')) {
+          if (this.options.buttonOpen.el instanceof HTMLElement) {
+            this.buttonOpen = this.options.buttonOpen.el
+
+            this.buttonOpen.addEventListener('click', this.triggerInput.bind(this))
+          }
+        }
+
+        if (this.options.hasOwnProperty('buttonDownLoad') && this.options.buttonDownLoad.hasOwnProperty('el')) {
+          if (this.options.buttonDownLoad.el instanceof HTMLElement) {
+              this.buttonUpload = this.options.buttonDownLoad.el
+              this.buttonUpload.style.display = 'none'
+          }
+        } else {
+          this.buttonUpload = this.createElement('button', ['button', 'button--primary'], 'Загрузить')
+          this.buttonUpload.style.display = 'none'
+          const block = document.querySelector(this.options.buttonDownLoad.selectorPos)
+          block && block.insertAdjacentElement(this.options.buttonDownLoad.pos, this.buttonUpload)
+        }
+
+        this.buttonUpload.addEventListener('click', this.uploadHandler.bind(this))
       }
 
-      this.buttonUpload.addEventListener('click', this.uploadHandler.bind(this))
-    }
+      this.onUpload = options.onUpload ?? (() => {})
 
-    this.onUpload = options.onUpload ?? (() => {})
+      if (this.options.multi) {
+        this.input.setAttribute('multiple', true)
+      }
 
-    if (this.options.multi) {
-      this.input.setAttribute('multiple', true)
+      if (this.options.accept && Array.isArray(this.options.accept)) {
+        this.input.setAttribute('accept', this.options.accept.join(', '))
+      }
+      
+      this.input.addEventListener('change', this.changeHandler.bind(this))
+      this.preview.addEventListener('click', this.removePreview.bind(this))
     }
-
-    if (this.options.accept && Array.isArray(this.options.accept)) {
-      this.input.setAttribute('accept', this.options.accept.join(', '))
-    }
-    
-    this.input.addEventListener('change', this.changeHandler.bind(this))
-    this.preview.addEventListener('click', this.removePreview.bind(this))
   }
 
   bytesToSize(bytes) {

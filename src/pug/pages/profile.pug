@@ -32,10 +32,10 @@ block content
                         form.card__profile-form(enctype="multipart/form-data")
                           input.card-profile__file(type="file" id="file")&attributes(attributes)
                           label.card-profile__file-label(for="file")&attributes(labelAttr) #{text}
-                            svg.card-profile__icon
+                            svg.card-profile__icon(xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink")
                               use(xlink:href="../../img/svg/sprite/sprite.svg#image")
                     button.card__user-img-edit
-                      svg.card__user-img-edit-icon
+                      svg.card__user-img-edit-icon(xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink")
                         use(xlink:href="../../img/svg/sprite/sprite.svg#edit-data")
                   .card__user-info
                     h4.card__user-title Sierra Ferguson
@@ -44,7 +44,7 @@ block content
                     input.card__user-email-input.hide(type="email" value="s.ferguson@gmail.com" disabled)
                     p.card__user-balance Баланс 99 700,00 ₽
                 button.card-profile__button-edit
-                  svg.card-profile__button-edit__icon
+                  svg.card-profile__button-edit__icon(xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink")
                     use(xlink:href="../../img/svg/sprite/sprite.svg#edit-data")
               .card.card-password
                 h3.card__password-title Смена пароля

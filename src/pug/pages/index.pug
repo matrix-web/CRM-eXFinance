@@ -12,7 +12,7 @@ block content
       .navigation__select
         #language.select
       button.button-logout(data-logout data-position="left" data-tooltip="Выход")
-        svg.button-logout__icon
+        svg.button-logout__icon(xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink")
           use(xlink:href="../../img/svg/sprite/sprite.svg#logout")
     include ../sections/_sidebar.pug
     main.app-content.right.left
@@ -21,7 +21,7 @@ block content
           .app-page__top
             h3.app-page__title Счет
             button.button.button--primary.app-page__button(data-refresh data-poisition="top" data-tooltip="Перезагрузить")
-              svg.app-page__button-refresh
+              svg.app-page__button-refresh(xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink")
                 use(xlink:href="../../img/svg/sprite/sprite.svg#refresh")
           .row
             .col-12.col-md-5.app-page__col-content
