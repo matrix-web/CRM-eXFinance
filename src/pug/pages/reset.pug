@@ -1,0 +1,25 @@
+extends ../layouts/page_layout/page.pug
+
+block variables
+  - const title = 'exFinance CRM system - Счет';
+  - const language = 'ru';
+
+block metaInfo
+
+block content
+  nav.navigation
+    .container
+      a.navigation__logo(href="#!") eXFinance
+  .auth.reset
+    .container
+      .auth-content
+        form.reset__form
+          h2.reset__title.reset--position-lines Сброс пароля
+          p.reset__message Введите ваш email-адрес для сброса пароля
+          .input-field
+            +inputFiled("email", "Email address")(placeholder="Введите email")
+            span.helper-text Это поле является обязательным
+          .input-field
+            input.button.button--primary.auth__button(type="submit" value="Сбросить пароль")
+        .reset__img
+          img(src="../../img/background/reset.jpg", alt="user reset")

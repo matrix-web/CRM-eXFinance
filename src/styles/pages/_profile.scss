@@ -1,0 +1,234 @@
+.card-profile {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.card-profile__button-edit {
+  position: absolute;
+  right: 10px;
+  top: 8px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+
+  &:hover, 
+  &:focus  {
+    outline: none;
+
+    .card-profile__button-edit__icon {
+      transition: fill .2s ease-in;
+      fill: #3878d3;
+    }
+  }
+}
+
+.card-profile__button-edit__icon {
+  width: 20px;
+  height: 20px;
+  fill: #C2CFE0;
+}
+
+.card__user-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
+}
+
+.card__user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'HK Grotesk', sans-serif;
+
+  @media (min-width: 768px) {
+    align-items: stretch;
+  }
+}
+
+.card__user-img {
+  position: relative;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex: auto 0 0;
+
+  img {
+    height: 100%;
+  }
+
+  &:hover {
+    .card-profile__img-overlay {
+      transition: opacity .3s ease-in;
+      opacity: 1;
+    }
+  }
+}
+
+.card__user-title {
+  margin-bottom: 5px;
+  font-size: 1.5rem;
+  font-weight: 300;
+  white-space: pre-wrap;
+  text-overflow: ellipsis;
+}
+
+.card__user-title-input {
+  font-size: 1.5rem;
+  font-weight: 300;
+  white-space: pre-wrap;
+  text-overflow: ellipsis;
+  border: none;
+  padding: 0px 0;
+  height: 35px;
+
+  &:disabled {
+    background-color: transparent;
+  }
+}
+
+.card__user-email {
+  font-weight: 600;
+  font-size: .875rem;
+  line-height: 1.45;
+  letter-spacing: 0.01em;
+  color: #90A0B7;
+  margin-bottom: 10px;
+  white-space: pre-wrap;
+  text-overflow: ellipsis;
+}
+
+.card__user-email-input {
+  font-weight: 600;
+  font-size: .875rem;
+  line-height: 1.45;
+  letter-spacing: 0.01em;
+  color: #90A0B7;
+  margin-bottom: 10px;
+  white-space: pre-wrap;
+  text-overflow: ellipsis;
+  border: none;
+
+  &:disabled {
+    background-color: transparent;
+  }
+}
+
+.card__user-balance {
+  font-weight: 500;
+  color: #334d6e;
+}
+
+.card-clock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: .25rem;
+  padding: 10px;
+  margin-top: 30px;
+  box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.06);
+
+  @media (min-width: 1100px) {
+    padding: 30px 25px 20px;
+  }
+
+  @media (min-width: 1200px) {
+    margin-top: 0;
+  }
+
+  &__date {
+    font-family: 'HK Grotesk';
+    font-weight: 500;
+    font-size: 1.3rem;
+    margin-top: 20px;
+  }
+}
+
+.card__profile-form {
+  width: 100%;
+  height: 100%;
+}
+
+.card-profile__img-overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .4);
+  opacity: 0;
+}
+
+.card-profile__file {
+  width: .1px;
+  height: .1px;
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.card-profile__file-label {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-profile__icon {
+  width: 24px;
+  height: 24px;
+  fill: #fff;
+}
+
+.card-img-wrapper {
+  position: relative;
+  margin-bottom: 15px;
+
+  @media (min-width: 768px) {
+    margin-bottom: 0;
+    margin-right: 30px;
+  }
+}
+
+.card__user-img-edit {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  right: 8%;
+  bottom: 3%;
+  z-index: 1;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  display: flex;
+  border: none;
+  background-color: #fff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.08);
+}
+
+.card__user-img-edit-icon {
+  width: 16px;
+  height: 16px;
+  fill: #334D6E;
+}
+
+.card__password-title {
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-bottom: 20px;
+}

@@ -1,0 +1,6 @@
+mixin checkbox(text = "", labelAttr={})
+  label(class="checkbox-label")&attributes(labelAttr)
+    input(class="checkbox" type="checkbox")&attributes(attributes)
+    span(class="fake-checkbox")
+    if (text.length !== 0)
+      | #{text}

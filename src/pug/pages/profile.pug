@@ -1,0 +1,67 @@
+extends ../layouts/page_layout/page.pug
+
+block variables
+  - const title = 'exFinance CRM system - Профиль';
+  - const language = 'ru';
+
+block metaInfo
+
+block content
+  .app-main-layout.app-main-profile
+    nav.navigation.app-navigation
+      .navigation__select
+        #language.select
+      button.button-logout(data-logout data-position="left" data-tooltip="Выход")
+        svg.button-logout__icon
+          use(xlink:href="../../img/svg/sprite/sprite.svg#logout")
+    include ../sections/_sidebar.pug
+    main.app-content.left.right
+      .container
+        .app-page
+          .app-page__top
+            h3.app-page__title Профиль
+        .row
+          .col-12.col-sm-12.col-xl-6
+            .card-wrapper
+              .card.card-profile
+                .card__content.card__user-content
+                  .card-img-wrapper
+                    .card__user-img
+                      img(src="../../img/avatars/middle-avatar.jpg", alt="user avatar")
+                      .card-profile__img-overlay
+                        form.card__profile-form(enctype="multipart/form-data")
+                          input.card-profile__file(type="file" id="file")&attributes(attributes)
+                          label.card-profile__file-label(for="file")&attributes(labelAttr) #{text}
+                            svg.card-profile__icon
+                              use(xlink:href="../../img/svg/sprite/sprite.svg#image")
+                    button.card__user-img-edit
+                      svg.card__user-img-edit-icon
+                        use(xlink:href="../../img/svg/sprite/sprite.svg#edit-data")
+                  .card__user-info
+                    h4.card__user-title Sierra Ferguson
+                    input.card__user-title-input.hide(type="text" value="Sierra Ferguson" disabled)
+                    p.card__user-email s.ferguson@gmail.com
+                    input.card__user-email-input.hide(type="email" value="s.ferguson@gmail.com" disabled)
+                    p.card__user-balance Баланс 99 700,00 ₽
+                button.card-profile__button-edit
+                  svg.card-profile__button-edit__icon
+                    use(xlink:href="../../img/svg/sprite/sprite.svg#edit-data")
+              .card.card-password
+                h3.card__password-title Смена пароля
+                form.card-password__change
+                  .input-field
+                    +inputFiled("password", "Пароль")(placeholder="Введите пароль")
+                    span.helper-text Это поле является обязательным
+                  .input-field
+                    +inputFiled("password", "Повторите пароль")(placeholder="Повторите пароль")
+                    span.helper-text Это поле является обязательным
+                  .input-field
+                    input.button.button--primary(type="submit" value="Сохранить")
+          .col-12.col-xl-6
+            .card-clock
+              canvas.clock-canvas#canvas
+              p.card-clock__date
+    +buttonAdd()(data-poisition="top", data-tooltip="Добавить запись")
+block scripts
+  script(src="../../js/index.js")
+  script(src="../../js/profile.js")

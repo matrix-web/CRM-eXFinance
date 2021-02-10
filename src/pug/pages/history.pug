@@ -1,0 +1,32 @@
+extends ../layouts/page_layout/page.pug
+
+block variables
+  - const title = 'exFinance CRM system - История записей';
+  - const language = 'ru';
+
+block metaInfo
+
+block content
+  .app-main-layout.app-main-history
+    nav.navigation.app-navigation
+      .navigation__select
+        #language.select
+      button.button-logout(data-logout data-position="left" data-tooltip="Выход")
+        svg.button-logout__icon
+          use(xlink:href="../../img/svg/sprite/sprite.svg#logout")
+    include ../sections/_sidebar.pug
+    main.app-content.left.right
+      .container
+        .app-page
+          .app-page__top
+            h3.app-page__title История записей
+          .row
+            .col-12
+            section.history
+              .history__chart
+                canvas
+              include ../sections/_history-table.pug
+              +pagination()
+      +buttonAdd()(data-poisition="top", data-tooltip="Добавить запись")
+block scripts
+  script(src="../../js/index.js")

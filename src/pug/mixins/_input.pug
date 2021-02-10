@@ -1,0 +1,6 @@
+mixin inputFiled(typeField="text", labelText="", labelAttr={})
+  label.label&attributes(labelAttr) 
+    span.label__text #{labelText}
+    input.input(type=typeField)&attributes(attributes)
+  if (block)
+    block

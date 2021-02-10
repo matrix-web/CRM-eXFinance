@@ -1,0 +1,16 @@
+extends ../layouts/page_layout/page.pug
+
+block variables
+  - const title = 'exFinance CRM system - 404';
+  - const language = 'ru';
+
+block metaInfo
+
+block content
+  .not-found
+    .container
+      .not-found__img
+        img(src="../../img/background/404.jpg", alt="404")
+      h1.not-found__title 404
+      p Запрошенная вами страница не найдена
+      a.button.button--primary.button-link(href="#!") На главную

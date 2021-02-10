@@ -1,0 +1,33 @@
+// Base
+@import './fonts/fonts';
+@import './base/variables';
+@import './base/mixins';
+@import './base/base';
+
+// Components
+@import './components/navigation';
+@import './components/sidebar';
+@import './components/user';
+@import './components/button';
+@import './components/checkbox';
+@import './components/input';
+@import './components/app-content';
+@import './components/card';
+@import './components/progress';
+@import './components/select';
+@import './components/preloader';
+@import './components/radio';
+@import './components/pagination';
+@import './components/button-add';
+@import './components/modal';
+@import './components/tooltip';
+@import './components/preview';
+
+// Sections
+@import './sections/history-table';
+
+// Pages
+@import './pages/auth';
+@import './pages/reset';
+@import './pages/404';
+@import './pages/profile';

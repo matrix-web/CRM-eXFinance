@@ -1,0 +1,90 @@
+.button {
+  display: inline-block;
+  padding: 11px 15px 10px;
+  background-color: #1565d8;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: background-color .3s ease 0s;
+
+  &--secondary {
+    background-color: #3f598a;
+
+    &:focus, &:hover {
+      background-color: #4d6da7;
+    }
+
+    &:active {
+      background-color: #374d77;
+    }
+  }
+
+  &--danger {
+    background-color: #f16141;
+
+    &:focus, &:hover {
+      background-color: #f0775b;
+    }
+
+    &:active {
+      background-color: #ee4a26;
+    }
+  }
+
+  &--primary {
+    &:focus, &:hover {
+      background-color: #34aff9;
+    }
+
+    &:active {
+        background-color: #098edf;
+    }
+  }
+}
+
+.button-link {
+  text-decoration: none;
+  
+
+  &:focus,
+  &:hover {
+      color: #fff;
+  }
+}
+
+.button-logout {
+  background-color: transparent;
+  border: none;
+  outline: none;
+
+  &__icon {
+    width: 20px;
+    height: 20px;
+    fill: #1565d8;
+  }
+
+  &:focus, 
+  &:hover {
+    outline: none;
+    
+    .button-logout__icon {
+      fill: #34aff9;
+      transition: fill .2s ease-in 0s;
+    }
+  }
+
+  &:active {
+    .button-logout__icon {
+      fill: #098edf;
+      transition: fill .2s ease-in 0s;
+    }
+  }
+}
+
+.record-form__button {
+  width: 100%;
+}

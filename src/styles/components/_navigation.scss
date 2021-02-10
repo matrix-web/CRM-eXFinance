@@ -1,0 +1,38 @@
+.navigation {
+  padding: 11px 0;
+  border: 1px solid #ececec;
+  background-color: #fff;
+}
+
+.navigation__logo {
+  font-family: 'HK Grotesk', sans-serif;
+  font-size: 1.5rem;
+  color: #1B3859;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.navigation__select {
+  flex: 170px 0 1;
+}
+
+.navigation__select-input {
+  height: 35px !important;
+}
+
+.navigation__select-text {
+  font-size: .875rem;
+}
+
+.navigation__select-icon {
+  width: 12px !important;
+  height: 12px !important;
+}
+
+.navigation__select-dropdown {
+  top: 35px !important;
+}
+
+.navigation__select-item {
+  padding: .313rem 1rem !important;
+}

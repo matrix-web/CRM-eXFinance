@@ -1,0 +1,41 @@
+extends ../layouts/page_layout/page.pug
+
+block variables
+    - const title = 'exFinance CRM system - Новая запись';
+    - const language = 'ru';
+
+block metaInfo
+
+block content
+  .app-main-layout
+    nav.navigation.app-navigation
+      .navigation__select
+        #language.select
+      button.button-logout(data-logout data-position="left" data-tooltip="Выход")
+        svg.button-logout__icon
+          use(xlink:href="../../img/svg/sprite/sprite.svg#logout")
+    include ../sections/_sidebar.pug
+    main.app-content.left.right
+      .container
+        .app-page
+          .app-page__top
+            h3.app-page__title Новая запись
+          .row
+            .col-12.col-md-6
+              .record-form
+                .input-field
+                  #select.select
+                .input-field
+                  +radio("Доход")(name="type" value="income")
+                  +radio("Расход")(name="type" value="outcome")
+                .input-field
+                  +inputFiled("number", "Сумма")(placeholder="Введите сумму" min="100")
+                  span.helper-text Это поле является обязательным
+                .input-field
+                  +inputFiled("text", "Описание")(placeholder="Введите описание")
+                  span.helper-text Это поле является обязательным
+                .input-field
+                  input.button.button--primary.record-form__button(type="submit" value="Создать")
+      +buttonAdd()(data-poisition="top", data-tooltip="Добавить запись")
+block scripts
+  script(src="../../js/index.js")

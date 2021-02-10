@@ -1,0 +1,49 @@
+table.history-table
+  thead.history-table__head
+    tr.history-table__row-head
+      th.history-table__cell-title
+        +checkbox()
+      th.history-table__cell-title #
+      th.history-table__cell-title Сумма
+      th.history-table__cell-title Дата
+      th.history-table__cell-title Категория
+      th.history-table__cell-title Тип
+    tr.history-table__row(style="display: none;")
+      td.history-table__cell.history-table__cell--info(colspan="6")
+        div.history-table__checkbox.inline-block
+          +checkbox()
+        span 1 Выбрано
+        button.history-table__button-delete
+          svg.history-table__button-delete-icon
+            use(xlink:href="../../img/svg/sprite/sprite.svg#trash")
+  tbody
+    tr.history-table__row
+      td().history-table__cell
+        +checkbox()
+      td(data-label="#").history-table__cell 1
+      td(data-label="Сумма").history-table__cell 1 500,00 ₽
+      td(data-label="Дата").history-table__cell 06 января 2021 г., 19:50:06
+      td(data-label="Категория").history-table__cell Автомобиль
+      td(data-label="Тип").history-table__cell
+        svg.history-table__icon
+          use(xlink:href="../../img/svg/sprite/sprite.svg#income")
+    tr.history-table__row
+      td.history-table__cell
+        +checkbox()
+      td(data-label="#").history-table__cell 2
+      td(data-label="Сумма").history-table__cell 15 000,00 ₽
+      td(data-label="Дата").history-table__cell 07 января 2021 г., 13:16:38
+      td(data-label="Категория").history-table__cell WFM
+      td(data-label="Тип").history-table__cell
+        svg.history-table__icon
+          use(xlink:href="../../img/svg/sprite/sprite.svg#outcome")
+    tr.history-table__row
+      td.history-table__cell
+        +checkbox()
+      td(data-label="#").history-table__cell 3
+      td(data-label="Сумма").history-table__cell 10 000,00 ₽
+      td(data-label="Дата").history-table__cell 07 января 2021 г., 14:39:00
+      td(data-label="Категория").history-table__cell Девушка
+      td(data-label="Тип").history-table__cell
+        svg.history-table__icon
+          use(xlink:href="../../img/svg/sprite/sprite.svg#outcome")

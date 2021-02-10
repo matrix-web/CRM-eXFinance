@@ -1,0 +1,33 @@
+extends ../layouts/page_layout/page.pug
+
+block variables
+  - const title = 'exFinance CRM system - Счет';
+  - const language = 'ru';
+
+block metaInfo
+
+block content
+  nav.navigation
+    .container
+      a.navigation__logo(href="#!") eXFinance
+  .auth.login
+    .container
+      .auth-content
+        .auth__img
+            img(src="../../img/background/work.png", alt="user-login")
+        form.login__form
+            h2.auth__title.login--position-lines Вход
+            .input-field
+                +inputFiled("email", "Email address")(placeholder="Введите email")
+                span.helper-text Это поле является обязательным
+            .input-field
+                +inputFiled("password", "Пароль")(placeholder="Введите пароль")
+                span.helper-text Это поле является обязательным
+            .input-field.auth__input-field
+                +checkbox("Запомнить меня")
+                a(href="#!") Забыли пароль?
+            .input-field
+                input.button.button--primary.auth__button(type="submit" value="Войти")
+            .auth__message
+                span У вас нет аккаунта? 
+                a(href="#!") Зарегистрироваться сейчас

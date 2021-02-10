@@ -1,0 +1,33 @@
+extends ../layouts/page_layout/page.pug
+
+block variables
+    - const title = 'exFinance CRM system - Счет';
+    - const language = 'ru';
+
+block metaInfo
+
+block content
+  .app-main-layout.app-main
+    nav.navigation.app-navigation
+      .navigation__select
+        #language.select
+      button.button-logout(data-logout data-position="left" data-tooltip="Выход")
+        svg.button-logout__icon
+          use(xlink:href="../../img/svg/sprite/sprite.svg#logout")
+    include ../sections/_sidebar.pug
+    main.app-content.right.left
+      .container
+        .app-page
+          .app-page__top
+            h3.app-page__title Счет
+            button.button.button--primary.app-page__button(data-refresh data-poisition="top" data-tooltip="Перезагрузить")
+              svg.app-page__button-refresh
+                use(xlink:href="../../img/svg/sprite/sprite.svg#refresh")
+          .row
+            .col-12.col-md-5.app-page__col-content
+              include ../sections/_card-balance.pug
+            .col-12.col-md-7
+              include ../sections/_card-currency.pug
+      +buttonAdd()(data-poisition="top", data-tooltip="Добавить запись")
+block scripts
+  script(src="../../js/index.js")

@@ -1,0 +1,14 @@
+mixin pagination(countItems=3)
+  nav(aria-label="pagination")
+    ul.pagination
+      li.pagination__item.disabled
+        a.pagination__link(href="#" aria-disabled="true") Назад
+      - for(let i = 1; i <= countItems; i++)
+          if i === 2
+            li.pagination__item(class="pagination__item--active" aria-current="page")
+              a.pagination__link(href="#") #{i}
+          else
+            li.pagination__item
+              a.pagination__link(href="#") #{i}
+      li.pagination__item
+        a.pagination__link(href="#") Вперед

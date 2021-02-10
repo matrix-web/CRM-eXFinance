@@ -1,0 +1,9 @@
+mixin progressBar(category, value, description, progressValue=10)
+  div.progress-box&attributes(attributes)
+    div.progress-box__content
+      div.progress-box__info.info
+        div.progress-box__info-category #{category}
+        div.progress-box__info-limit #{value}
+      div.progress-box__progress
+        div.progress-box__progress-line(style="width:" + progressValue + '%')
+      div.partidas #{description}

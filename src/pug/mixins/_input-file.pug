@@ -1,0 +1,5 @@
+mixin inputFile(text='', id)
+  input.file(type="file" id=id)&attributes(attributes)
+  label.file-label(for=id) #{text}
+    if (block)
+      block

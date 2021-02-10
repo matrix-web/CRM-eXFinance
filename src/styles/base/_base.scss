@@ -1,0 +1,189 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 14px;
+
+  @media (min-width: 768px) {
+    font-size: 16px;
+  }
+}
+
+body {
+  @include defaultText;
+}
+
+.overlay {
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, .75);
+    z-index: 100;
+    overflow: hidden;
+    transition: opacity .4s ease-in;
+  }
+
+}
+
+.overlay-active::before {
+  opacity: 1;
+}
+
+main.right {
+  touch-action: pan-right;
+}
+
+main.left {
+  touch-action: pan-left;
+}
+
+main.left.right {
+  touch-action: pan-y;
+}
+
+body.right {
+  touch-action: pan-right;
+}
+
+body.left {
+  touch-action: pan-left;
+}
+
+body.left.right {
+  touch-action: pan-y;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+a {
+  font-size: .875rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: #1565D8;
+  transition: color .3s ease-in 0s;
+
+  &:hover {
+    color: #109CF1;
+    transition: color .3s ease-in 0s;
+  }
+
+  &:active {
+    color: #0f4fa8;
+  }
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+}
+
+.file {
+  position: absolute;
+  width: .1px;
+  height: .1px;
+  z-index: -1;
+  opacity: 0;
+}
+
+.label {
+  width: 100%;
+}
+
+.categories-subtitle {
+  margin-bottom: 25px;
+}
+
+.app-main-layout--sidebar-mini {
+  grid-template-columns: 68px 1fr !important;
+}
+
+.app-main-layout {
+  display: grid;
+  grid-template-rows: 60px;
+  grid-template-areas: 'navigation'
+                        'content' 
+                        'content';
+  background-color: #F5F6F8;
+  height: 100vh;
+
+  @media (min-width: 1100px) {
+    grid-template-areas: 'sidebar navigation'
+                        'sidebar content' ;
+    grid-template-columns: 300px 1fr;
+  }
+
+  @media (min-height: 1200px) and (min-width: 1200px) {
+    height: 100vh;
+  }
+
+  @media (min-height: 810px) and (min-width: 1200px) {
+    height: 100vh;
+  }
+}
+
+.app-main {
+  height: 100%;
+
+  @media (min-width: 768px) {
+    height: 100vh;
+  }
+}
+
+.app-main-profile {
+  height: 100%;
+}
+
+.app-main-history {
+  height: 100%;
+
+  @media (min-width: 768px) {
+    height: 100vh;
+  }
+}
+
+.app-main-categories {
+  height: 100%;
+
+  @media (min-width: 768px) {
+    height: 100vh;
+  }
+}
+
+.app-main-mini-layout {
+  grid-template-columns: 68px 1fr;
+}
+
+.hide {
+  display: none;
+}

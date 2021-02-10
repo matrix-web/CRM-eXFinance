@@ -1,0 +1,9 @@
+@mixin defaultText {
+  font: {
+    family: 'Open Sans', sans-serif;
+    size: 1rem;
+    weight: 400;
+  }
+
+  color: $defaultTextColor;
+}

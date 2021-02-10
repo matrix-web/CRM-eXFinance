@@ -1,0 +1,5 @@
+mixin button(typeBtn="submit", btnText, link=false)
+  if (!link)
+    input.button(type=typeBtn value=btnText)&attributes(attributes)
+  else
+    a.button.button-link&attributes(attributes) #{btnText}

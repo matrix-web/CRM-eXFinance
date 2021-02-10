@@ -1,0 +1,136 @@
+$height: 45px;
+
+.select {
+  position: relative;
+  width: 100%;
+  z-index: 90;
+  background-color: #fff;
+
+  &.open {
+    .select__dropdown {
+      display: block;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+
+    .select__input {
+      border-bottom: 1px solid transparent;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    .select__backdrop {
+      display: block;
+    }
+  }
+
+  &__icon {
+    width: 16px;
+    height: 16px;
+    transform-origin: center;
+    transition: transform .3s ease-in 0s;
+    pointer-events: none;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &__input {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+    border: 1px solid #c3cad9;
+    border-radius: 5px;
+    height: $height;
+    cursor: pointer;
+
+    span {
+      pointer-events: none;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+
+    i {
+      pointer-events: none;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: #1565d8;
+    }
+  }
+
+  &__dropdown {
+    display: none;
+    position: absolute;
+    border-radius: 5px;
+    top: $height;
+    left: 0;
+    right: 0;
+    max-height: 200px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-shadow: 2px 3px 5px rgba(0, 0, 0, .3);
+    background-color: #fff;
+
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    &::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+      border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      background-color: rgba(21, 101, 216, .4);
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, .5);
+    }
+
+    &::-webkit-scrollbar-thumb:window-inactive {
+      background: rgba(21, 101, 216, .4);
+    }
+  }
+
+  &__backdrop {
+    position: fixed;
+    z-index: -1;
+    display: none;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: transparent;
+  }
+
+  &__item {
+    padding: .625rem 1rem;
+    border-bottom: 1px solid #ccc;
+
+    &--position {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &.selected {
+      background-color: #109CF1;
+      color: #fff;
+    }
+
+    &:hover {
+      background-color: #4cade9;
+      color: #fff;
+      cursor: pointer;
+      transition: .15s background-color ease-in;
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}

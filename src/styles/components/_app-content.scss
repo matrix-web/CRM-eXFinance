@@ -1,0 +1,61 @@
+.app-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 35px;
+  grid-area: navigation;
+}
+
+.app-content {
+  padding: 30px 0 50px;
+  grid-area: content;
+
+  @media (min-width: 768px) {
+    padding: 30px 35px 30px; 
+  }
+}
+
+.app-page__col-content {
+  margin-bottom: 30px;
+
+  @media(min-width: 768px) {
+    margin-bottom: 0;
+  }
+}
+
+.app-page__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.app-page__title {
+  font-family: 'HK Grotesk', sans-serif;
+  font-size: 2rem;
+  font-weight: 500;
+  text-align: center;
+  color: #183B56;
+}
+
+.app-page__button {
+  line-height: 1;
+  padding: 5px 15px;
+  border-radius: 3px;
+
+  &-refresh {
+    width: 16px;
+    height: 16px;
+    fill: #fff;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.app-page__current-balance {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #192d49;
+}
